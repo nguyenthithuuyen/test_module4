@@ -1,0 +1,26 @@
+<div class="container">
+  <button class="btn btn-secondary mt-3" [routerLink]="['/']">Về trang chủ</button>
+
+  <table class="table table-bordered mt-2">
+    <thead class="thead-dark">
+    <tr>
+      <th colspan="2">Danh sách đọc</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let item of books;  let i = index">
+    <tr>
+      <td>{{i +1}}</td>
+      <td>{{ item.name }}</td>
+      <td>
+        <button type="submit" class="btn btn-primary" (click)="update(item.id)">Đã đọc</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-light">Update</button>
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+
+  <button><a [routerLink]="['/unread-list']">Danh sách đã đọc</a></button>
+</div>
